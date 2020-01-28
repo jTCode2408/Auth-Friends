@@ -1,6 +1,6 @@
 //itnial login form return token on click
 import React from 'react';
-import {withFormik, Form, Field} from 'formik';
+// import {withFormik, Form, Field} from 'formik';
 import axios from 'axios';
 
 class LoginForm extends React.Component {
@@ -24,9 +24,7 @@ class LoginForm extends React.Component {
 
   login = e => {
     e.preventDefault();
-    // make a POST request to the server
-    // the server will "authenticate" the user based on their credentials
-    // If they can be authenticated the server will return a token
+   
     axios
       .post('http://localhost:5000/api/login', this.state.credentials)
       .then(res => {
@@ -46,12 +44,14 @@ class LoginForm extends React.Component {
             name="username"
             value={this.state.credentials.username}
             onChange={this.handleChange}
+            placeholder = "username"
           />
           <input
             type="password"
             name="password"
             value={this.state.credentials.password}
             onChange={this.handleChange}
+            placeholder="password"
           />
           <button>Log in</button>
         </form>

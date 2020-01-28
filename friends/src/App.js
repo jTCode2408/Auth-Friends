@@ -1,28 +1,25 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Roter, Route, Link, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import LoginForm from './components/LoginForm';
-import { Router } from 'express';
+
 
 function App() {
   return (
-    <Router>
+   
     <div className="App">
-      <header className="App-header">
+     
       
-  <p>
+  <h1>
     Friend Finder 
-  </p>
-      </header>
-    
+  </h1>
+     
 <LoginForm/>
-      {/* <Link to ="/login">Login</Link>
+      <Link to ="/login">Login</Link>
       <Route path= "/login" component ={LoginForm}/>
-      <Route component ={LoginForm}/> */}
+      <Route component ={LoginForm}/>
     </div>
 
-
-    </Router>
   );
 }
 
