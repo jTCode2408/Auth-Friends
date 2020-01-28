@@ -1,1 +1,0 @@
-//display list of friends
