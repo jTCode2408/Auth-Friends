@@ -66,7 +66,7 @@ class AddFriend extends React.Component {
           />
     
         
-          <button >Add a buddy
+          <button >Add pal
           </button>
        
         </form>
