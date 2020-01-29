@@ -18,9 +18,9 @@ function App() {
      
 
       <Link to ="/login">Login</Link>
-      <Link to ="/protected">Friends List</Link>
+      <Link to ="/friends">Friends List</Link>
       <Switch>
-        <PrivateRoute path ="/protected" component ={FriendsList}/>
+        <PrivateRoute path ="/friends" component ={FriendsList}/>
       <Route path= "/login" component ={LoginForm}/>
       <Route component ={LoginForm}/>
       </Switch>

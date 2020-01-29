@@ -28,9 +28,9 @@ class LoginForm extends React.Component {
     axios
       .post('http://localhost:5000/api/login', this.state.credentials)
       .then(res => {
-          console.log(res);
-        // localStorage.setItem('token', res.data.payload);
-        // this.props.history.push('/protected');
+          console.log('login res', res);
+        localStorage.setItem('token', res.data.payload);
+        this.props.history.push('/friends');
       })
       .catch(err => console.log(err));
   };
@@ -53,7 +53,7 @@ class LoginForm extends React.Component {
             onChange={this.handleChange}
             placeholder="password"
           />
-          <button>Log in</button>
+          <button>Go</button>
         </form>
       </div>
     );
