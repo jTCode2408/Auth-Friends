@@ -1,8 +1,7 @@
 //itnial login form return token on click
 import React from 'react';
-// import {withFormik, Form, Field} from 'formik';
 import axios from 'axios';
-
+import Loader from 'react-loader-spinner';
 class LoginForm extends React.Component {
   state = {
     credentials: {
@@ -53,7 +52,14 @@ class LoginForm extends React.Component {
             onChange={this.handleChange}
             placeholder="password"
           />
+        
           <button>Go</button>
+          {this.props.fetchingData && (
+          <div className="key spinner">
+            <Loader type="Puff" color="#204963" height="60" width="60" />
+            <p>Loading Data</p>
+          </div>
+        )}
         </form>
       </div>
     );
