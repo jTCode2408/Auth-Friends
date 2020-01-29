@@ -7,18 +7,18 @@ import PrivateRoute from './PrivateRoute';
 
 class AddFriend extends React.Component {
   state = {
-    friends: {
-      username: '',
-      password: '',
+    add: {
+      name: '',
       age:'',
-      id:''
+      email: '',
+      id:Date.now()
     }
   };
 
   handleChange = e => {
     this.setState({
-      friends: {
-        ...this.state.friends,
+      add: {
+        ...this.state.add,
         [e.target.name]: e.target.value
       }
     });
@@ -28,15 +28,15 @@ class AddFriend extends React.Component {
     e.preventDefault();
    
     axiosWithAuth()
-      .post('http://localhost:5000/api/friends', this.state.friends)
+      .post('http://localhost:5000/api/friends', this.state.add)
       .then(res => {
           console.log('ADD friend res', res);
-        localStorage.setItem('token', res.data.payload);
-        this.props.history.push('/addfriends');
+          this.setState({add: [...res.data]})
+        this.props.history.push('/friends');
       })
       .catch(err => console.log(err));
-  };
 
+};
   render() {
     return (
       <div>
@@ -45,22 +45,28 @@ class AddFriend extends React.Component {
         <form onSubmit={this.add}>
           <input
             type="text"
-            name="username"
-            value={this.state.friends.username}
+            name="name"
+            value={this.state.add.name}
             onChange={this.handleChange}
-            placeholder = "username"
+            placeholder = "name"
           />
           <input
-            type="password"
-            name="password"
-            value={this.state.friends.password}
+            type="age"
+            name="age"
+            value={this.state.add.age}
             onChange={this.handleChange}
-            placeholder="password"
+            placeholder="age"
+          />
+          <input
+            type="email"
+            name="email"
+            value={this.state.add.email}
+            onChange={this.handleChange}
+            placeholder="email"
           />
     
         
-          <button><Link to= "/friends">Add a buddy</Link>
-          <PrivateRoute path ="/friends" component ={FriendsList}/>
+          <button >Add a buddy
           </button>
        
         </form>

@@ -19,13 +19,13 @@ function App() {
 <div className = "nav">
      <Link to ="/login">Login</Link>
       <Link to ="/friends">Friends List</Link>
-      <Link to ="/addfriends">Add Friends</Link>
+  
       </div>
 
 
       <Switch>
         <PrivateRoute path ="/friends" component ={FriendsList}/>
-        <PrivateRoute path ="/addfriends" component={AddFriend}/>
+        <PrivateRoute path ="/addfriend" component={AddFriend}/>
       <Route path= "/login" component ={LoginForm}/>
       <Route component ={LoginForm}/>
       </Switch>

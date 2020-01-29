@@ -2,6 +2,8 @@
 //private route page
 import React, {useState, useEffect} from 'react'
 import { axiosWithAuth } from '../utils/axiosWithAuth';
+import AddFriend from './AddFriend';
+import { Link, Switch, Route} from 'react-router-dom';
 
 
 const FriendsList = props =>{
@@ -25,6 +27,11 @@ return(
 
 <h2>Friends List</h2>
 
+
+<Link to={`/addfriend`}> 
+<h5>Add A Bud</h5> </Link>
+ <Route exact path={`/addfriend`}> </Route>
+   
     <div className = "list-cont">
 
 {friends.map(friend =>(
