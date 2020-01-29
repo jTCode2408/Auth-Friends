@@ -3,15 +3,16 @@
 import React, {useState, useEffect} from 'react'
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 
+
 const FriendsList = props =>{
-console.log('friends props', props);
+// console.log('friends props', props);
 const [friends, setFriends] = useState([]);
 
 useEffect(()=>{
 axiosWithAuth()
 .get('http://localhost:5000/api/friends')
 .then(res =>{
-    console.log(res);
+    // console.log(res);
     setFriends(res.data)
 })
 .catch(err =>{
@@ -20,18 +21,22 @@ axiosWithAuth()
 
 }, [])
 return(
+    <section>
 
-    <div>
 <h2>Friends List</h2>
+
+    <div className = "list-cont">
+
 {friends.map(friend =>(
-    <div>
-{friend.id}
-Name:{friend.name}
-Age:{friend.age}
-Email:{friend.email}
+    <div className = "friends-map">
+{/* key={friend.id} */}
+<h4>Name: </h4><p>{friend.name} </p>
+<h5> Age: </h5><p> {friend.age} </p>
+<h5> Email:</h5><p> {friend.email}</p>
 </div>
 ))}
     </div>
+    </section>
 )
 
 

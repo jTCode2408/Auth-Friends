@@ -1,7 +1,10 @@
 //component to add friend
 import React from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
-import Loader from 'react-loader-spinner';
+import {Link} from 'react-router-dom'
+import FriendsList from './FriendsList';
+import PrivateRoute from './PrivateRoute';
+
 class AddFriend extends React.Component {
   state = {
     friends: {
@@ -54,22 +57,12 @@ class AddFriend extends React.Component {
             onChange={this.handleChange}
             placeholder="password"
           />
-          {/* <input
-            type="age"
-            name="age"
-            value={this.state.friendCredentials.age}
-            onChange={this.handleChange}
-            placeholder="age"
-          /> */}
     
         
-          <button>Go</button>
-          {this.props.fetchingData && (
-          <div className="key spinner">
-            <Loader type="Puff" color="#204963" height="60" width="60" />
-            <p>Loading Data</p>
-          </div>
-        )}
+          <button><Link to= "/friends">Add a buddy</Link>
+          <PrivateRoute path ="/friends" component ={FriendsList}/>
+          </button>
+       
         </form>
       </div>
     );

@@ -11,15 +11,18 @@ function App() {
    <Router>
     <div className="App">
      
-      
+      <div className = "head">
   <h1>
     Friend Finder 
   </h1>
-     
-
-      <Link to ="/login">Login</Link>
+  </div>
+<div className = "nav">
+     <Link to ="/login">Login</Link>
       <Link to ="/friends">Friends List</Link>
       <Link to ="/addfriends">Add Friends</Link>
+      </div>
+
+
       <Switch>
         <PrivateRoute path ="/friends" component ={FriendsList}/>
         <PrivateRoute path ="/addfriends" component={AddFriend}/>

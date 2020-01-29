@@ -1,38 +1,71 @@
 .App {
-  text-align: center;
-}
+text-align: center;
+background-color: black;
+height: 66vw;
+color: gold;
+box-sizing: border-box;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
 }
+.nav{
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin:5px;
+}
+
+.list-cont{
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-image: url('./images/kobe.jpg');
+  background-repeat: repeat;
+  background-size: contain;
+  color: rgb(240, 236, 0);
+  widows: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.friends-map{
+
+  justify-content: space-between;
+  width: 40%;
+  margin:3%;
+  border:2px dotted yellow;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+input{
+background-color: darkorchid;
+color:yellowgreen;
+margin:2%;
+border: hidden;
+height: 20px;
+border-radius:10px;
+
+}
+h2{
+  color:goldenrod;
+  font-family: fantasy;
+  font-size: 4rem;
+}
+h4{
+font-size: 1.7rem;
+}
+
+h5{
+font-size: 1.5rem;
+}
+p{
+  color:rgb(58, 2, 58);
+  font-size: 1rem;
+font-weight: bold;
+color:white;
+text-decoration: underline;
+text-decoration-color: darkgrey;
+}
+button{
+  margin:0 auto;
+  border: 5px double rgba(45, 7, 82, 0.616);
+  border-radius: 2px;
+
 }
