@@ -5,14 +5,14 @@ import { axiosWithAuth } from '../utils/axiosWithAuth';
 
 const FriendsList = props =>{
 console.log('friends props', props);
-const [friends, setFriends] = useState();
+const [friends, setFriends] = useState([]);
 
 useEffect(()=>{
 axiosWithAuth()
 .get('http://localhost:5000/api/friends')
 .then(res =>{
     console.log(res);
-    // setFriends(res.data.)
+    setFriends(res.data)
 })
 .catch(err =>{
     console.log('error on friends list', err);
