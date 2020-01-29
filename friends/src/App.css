@@ -1,0 +1,71 @@
+.App {
+text-align: center;
+background-color: black;
+height: 66vw;
+color: gold;
+box-sizing: border-box;
+
+}
+.nav{
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin:5px;
+}
+
+.list-cont{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-image: url('./images/kobe.jpg');
+  background-repeat: repeat;
+  background-size: contain;
+  color: rgb(240, 236, 0);
+  widows: 100%;
+}
+
+.friends-map{
+
+  justify-content: space-between;
+  width: 40%;
+  margin:3%;
+  border:2px dotted yellow;
+}
+
+
+input{
+background-color: darkorchid;
+color:yellowgreen;
+margin:2%;
+border: hidden;
+height: 20px;
+border-radius:10px;
+
+}
+h2{
+  color:goldenrod;
+  font-family: fantasy;
+  font-size: 4rem;
+}
+h4{
+font-size: 1.7rem;
+}
+
+h5{
+font-size: 1.5rem;
+}
+p{
+  color:rgb(58, 2, 58);
+  font-size: 1rem;
+font-weight: bold;
+color:white;
+text-decoration: underline;
+text-decoration-color: darkgrey;
+}
+button{
+  margin:0 auto;
+  border: 5px double rgba(45, 7, 82, 0.616);
+  border-radius: 2px;
+
+}
